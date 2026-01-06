@@ -65,16 +65,43 @@ RustPotato provides the following features:
 
 ### Build Options
 
+#### Build on Windows
+
+- **Install Requirements**
+
+  ```powershell
+  rustup.exe install nightly-2025-02-14
+  ```  
+
+- **Basic build** (only the process output is printed):
+
+  ```powershell
+  cargo.exe +nightly-2025-02-14 build --release
+  ```
+
+- **Build with verbose logging**:
+
+  ```powershell
+  cargo.exe +nightly-2025-02-14 build --release --features verbose
+  ```
+#### Build on Linux
+
+- **Install Requirements**
+
+  ```bash
+  sudo apt install mingw64-gcc 
+  ```  
+
 - **Basic build** (only the process output is printed):
 
   ```bash
-  cargo +nightly-2025-02-14 build --release
+  cargo build --release --target x86_64-pc-windows-gnu
   ```
 
 - **Build with verbose logging**:
 
   ```bash
-  cargo +nightly-2025-02-14 build --release --features verbose
+  cargo build --release --target x86_64-pc-windows-gnu --features verbose
   ```
 
 > [!NOTE]
